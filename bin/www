@@ -1,10 +1,19 @@
+#!/usr/bin/env node
 require('babel-polyfill')
-if ( process.env.NODE_ENV !== 'production' ) {
-  if (
-    !require('piping')({ hook: true, ignore: /(public)/ })
-  ) {
-    return;
+const dotenv = require('dotenv')
+const piping = require('piping')
+
+const setup = () => {
+  if ( process.env.NODE_ENV !== 'production' ) {
+    dotenv.config()
+    if (
+      !piping({ hook: true, ignore: /(public)/ })
+    ) {
+      return
+    }
   }
+
+  require('../server') // eslint-disable-line
 }
 
-require('../server');
+setup()
