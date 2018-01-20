@@ -1,0 +1,44 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "plugins": [
+    "wyze"
+  ],
+  "globals": {
+    "sinon": true
+  },
+  "rules": {
+    "keyword-spacing": [0, {"before": false}],
+    "no-underscore-dangle": [
+      2,
+      {
+        "allow": [
+          "_id",
+          "_rev"
+        ]
+      }
+    ],
+    "id-blacklist": 0,
+    "max-len": [2, 120, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": true
+    }],
+    "semi": ["error", "never"],
+    "import/extensions": ["error", "always", {
+      "js": "never",
+    }],
+    "space-in-parens": 0,
+    "wyze/space-around-conditional": 2,
+    "wyze/func-params-spacing": 2,
+    "wyze/max-file-length": 2,
+    "import/first": 0,
+    "wyze/sort-imports": 2,
+    "max-statements": ["error", 20],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "newline-before-return": "error",
+    "import/prefer-default-export": 0
+  }
+}

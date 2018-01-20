@@ -1,0 +1,9 @@
+{
+  "globals": {
+    "expect": true
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "wyze/max-file-length": 0
+  }
+}
