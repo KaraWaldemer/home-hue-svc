@@ -24,7 +24,6 @@ export async function toggleGroup( req, res ) {
       groupDetails && groupDetails.state && groupDetails.state.any_on ?
       groupDetails.state.any_on : false
 
-    console.log({groupDetails})
     const results = await Agent.put(
       `http://10.0.0.2/api/${process.env.HUE_USER}/groups/${groupId}/action`,
       { on: !currentState },
