@@ -16,7 +16,7 @@ export async function getGroups( req, res ) {
 
 export async function toggleGroup( req, res ) {
   try {
-    const groupId = req.param.id
+    const groupId = req.params.id
     const response = await Agent.get(`${HUE_URL}${HUE_USER}/groups/${groupId}`)
     const groupDetails = JSON.parse(response.text)
 
